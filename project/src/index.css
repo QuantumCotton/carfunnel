@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #164e63 0%, #0c4a6e 25%, #082f49 50%, #0f172a 100%);
+}
+
+/* Futuristic scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(8, 145, 178, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(8, 145, 178, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(8, 145, 178, 0.7);
+}
+
+/* Calendar styles */
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #0891b2;
+  --rdp-background-color: #0891b2;
+  --rdp-accent-color-dark: #0891b2;
+  --rdp-background-color-dark: #0891b2;
+  --rdp-outline: 2px solid var(--rdp-accent-color);
+  --rdp-outline-selected: 2px solid var(--rdp-accent-color);
+  margin: 0;
+}
+
+.rdp-day_selected, 
+.rdp-day_selected:focus-visible, 
+.rdp-day_selected:hover {
+  background-color: var(--rdp-accent-color) !important;
+  color: white !important;
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: rgba(8, 145, 178, 0.2) !important;
+}
+
+/* Custom checkbox styles */
+input[type="checkbox"] {
+  @apply w-5 h-5 rounded border-cyan-600 text-cyan-600 focus:ring-cyan-500;
+}
+
+/* Custom button focus styles */
+button:focus-visible {
+  @apply outline-none ring-2 ring-cyan-500 ring-offset-2 ring-offset-gray-800;
+}
+
+/* Glowing effect */
+.glow {
+  box-shadow: 0 0 15px rgba(8, 145, 178, 0.5);
+}
+
+/* Animated background */
+.animate-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(8, 145, 178, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(8, 145, 178, 0.1) 1px, transparent 1px);
+  animation: grid 20s linear infinite;
+}
+
+@keyframes grid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
